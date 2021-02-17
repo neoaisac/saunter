@@ -117,7 +117,7 @@ namespace Saunter.Generation
                     Subscribe = GenerateOperationFromClass(cc.Type, schemaRepository, OperationType.Subscribe),
                 };
 
-                channels.Add(cc.Channel.Name, channelItem);
+                channels.AddOrAppend(cc.Channel.Name, channelItem);
 
                 var context = new ChannelItemFilterContext(cc.Type, schemaRepository, cc.Channel);
                 foreach (var filter in _options.ChannelItemFilters)
